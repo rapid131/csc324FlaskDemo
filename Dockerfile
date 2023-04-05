@@ -1,5 +1,5 @@
 # start by pulling the python image
-FROM python:slim 
+FROM python:3.6.8 
 
 RUN useradd flaskdemo
 
@@ -11,6 +11,7 @@ COPY requirements.txt requirements.txt
 
 # install the dependencies and packages in the requirements file
 RUN python -m venv venv
+RUN venv/bin/pip install --upgrade pip 
 RUN venv/bin/pip install -r requirements.txt
 RUN venv/bin/pip install gunicorn
 
