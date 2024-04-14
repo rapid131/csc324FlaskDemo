@@ -29,8 +29,8 @@ pipeline {
                 {
                         steps {
 				sh 'sudo chmod 666 /var/run/docker.sock'
-                                sh 'docker build -t baoqiangy/flaskdemo:$VERSION .'
-                                sh 'docker build -t baoqiangy/flaskdemo:latest .'
+                                sh 'docker build -t rapid131/flaskdemo:$VERSION .'
+                                sh 'docker build -t rapid131/flaskdemo:latest .'
                         }
                 }
 
@@ -44,8 +44,8 @@ pipeline {
 		stage('Push Image to Dockerhub') {
 
 			steps {
-				sh 'docker push baoqiangy/flaskdemo:$VERSION'
-				sh 'docker push baoqiangy/flaskdemo:latest'
+				sh 'docker push rapid131/flaskdemo:$VERSION'
+				sh 'docker push rapid131/flaskdemo:latest'
 			}
 		}
 
